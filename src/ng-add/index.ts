@@ -48,7 +48,7 @@ export function updateAppRouting(options: MsalSchematicOption) {
       let strContent: string = "";
       if (content) strContent = content.toString();
 
-      const updatedContent = addPreloadStrategy(strContent);
+      const updatedContent = addPreloadStrategy(strContent.toString(), _context);
 
       _host.overwrite(indexPath, updatedContent);
     } else {
@@ -59,22 +59,21 @@ export function updateAppRouting(options: MsalSchematicOption) {
   };
 }
 
-function addPreloadStrategy(str: string): string {
+function addPreloadStrategy(str: string, _context: SchematicContext): string {
   if (str.indexOf("preloadingStrategy") == -1) {
-    str = "import { PredictivePreloadingStrategy } from './app.preloadStrategy';" + str;
+    str = "import { PredictivePreloadingStrategy } from './app.preloadStrategy';\n" + str;
     if (str.indexOf("RouterModule.forRoot(routes,{") > -1) {
       return str.replace("RouterModule.forRoot(routes,{", "RouterModule.forRoot(routes,{ preloadingStrategy: PredictivePreloadingStrategy,");
     } else if (str.indexOf("RouterModule.forRoot(routes, {") > -1) {
       return str.replace("RouterModule.forRoot(routes, {", "RouterModule.forRoot(routes, { preloadingStrategy: PredictivePreloadingStrategy,");
+    } else if (str.indexOf("RouterModule.forRoot(routes)") > -1) {
+      return str.replace("RouterModule.forRoot(routes", "RouterModule.forRoot(routes, { preloadingStrategy: PredictivePreloadingStrategy}");
     }
-  } else if (str.indexOf("RouterModule.forRoot(routes)") > -1) {
-    return str.replace("RouterModule.forRoot(routes", "RouterModule.forRoot(routes, { preloadingStrategy: PredictivePreloadingStrategy}),");
   }
   return str;
 }
 
 export interface MsalSchematicOption {
-  srcDir: string;
   appDir: string;
   [key: string]: any;
 }

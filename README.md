@@ -7,23 +7,14 @@ Angular Predictive Preload - This package supports Angular 13+
 
 ## Installation
 
-1. Create a new project
-
-```sh
-ng new test
-cd test
-
-# !! Make sure in the package.json to set "rxjs": "~6.6.0"
-```
-
-2. Include the predictive preload routing strategy into your application.
+1. Include the predictive preload routing strategy into your application.
 
 ```sh
 ng add @tchitos/angular-predictive-preload
 
 ```
 
-3. Run the application et voila!
+2. Run the application et voila!
 
 ```sh
 ng serve

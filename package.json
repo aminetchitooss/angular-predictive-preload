@@ -34,7 +34,8 @@
   "dependencies": {
     "@angular-devkit/core": "^12.2.11",
     "@angular-devkit/schematics": "^12.2.11",
-    "typescript": "~4.3.2"
+    "typescript": "~4.3.2",
+    "@tchitos/angular-predictive-preload": "latest"
   },
   "devDependencies": {
     "@types/node": "^12.11.1"
