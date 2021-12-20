@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "ngAdd",
+  "title": "My Full Schematics Schema",
+  "type": "object",
+  "properties": {
+    "srcDir": {
+      "type": "string",
+      "default": "./src/"
+    },
+    "appDir": {
+      "type": "string",
+      "default": "./src/app/"
+    }
+  }
+}

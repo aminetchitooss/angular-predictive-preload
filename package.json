@@ -1,0 +1,42 @@
+{
+  "name": "@tchitos/angular-predictive-preload",
+  "version": "1.0.0",
+  "description": "A schematic that sets up a predictive preload routing strategy",
+  "author": {
+    "name": "tchitos"
+  },
+  "keywords": [
+    "schematics",
+    "angular preload",
+    "angular predictive preload",
+    "schematics predictive preload",
+    "schematics angular preload",
+    "schematics angular predictive",
+    "schematics angular predictive preload",
+    "schematics msal"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aminetchitooss/angular-predictive-preload.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aminetchitooss/angular-predictive-preload/issues"
+  },
+  "homepage": "https://github.com/aminetchitooss/angular-predictive-preload#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "schematics": "./src/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "^12.2.11",
+    "@angular-devkit/schematics": "^12.2.11",
+    "typescript": "~4.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.1"
+  }
+}
