@@ -26,7 +26,7 @@ export class PredictivePreloadingStrategy implements PreloadingStrategy {
     this.preloadOnDemand$ = this.preloadService.state$;
   }
   preload(route: Route, load: Function): Observable<any> {
-    if (!route?.data || route?.data?.preload) return isGoodNetwork() ? load() : EMPTY;
+    if (!route?.data || route?.data?.["preload"]) return isGoodNetwork() ? load() : EMPTY;
 
     return this.preloadOnDemand$.pipe(
       mergeMap((preloadOptions) => {
