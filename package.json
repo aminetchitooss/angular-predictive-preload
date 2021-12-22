@@ -1,6 +1,6 @@
 {
   "name": "@tchitos/angular-predictive-preload",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A schematic that sets up a predictive preload routing strategy",
   "author": {
     "name": "tchitos"
