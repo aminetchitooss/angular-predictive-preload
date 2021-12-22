@@ -69,6 +69,12 @@ function addPreloadStrategy(str: string, _context: SchematicContext): string {
     } else if (str.indexOf("RouterModule.forRoot(routes)") > -1) {
       return str.replace("RouterModule.forRoot(routes", "RouterModule.forRoot(routes, { preloadingStrategy: PredictivePreloadingStrategy}");
     }
+  } else if (str.indexOf("preloadingStrategy: PreloadAllModules") > -1) {
+    str = "import { PredictivePreloadingStrategy } from './app.preloadStrategy';\n" + str;
+    return str.replace("preloadingStrategy: PreloadAllModules", "preloadingStrategy: PredictivePreloadingStrategy");
+  } else if (str.indexOf("preloadingStrategy:PreloadAllModules") > -1) {
+    str = "import { PredictivePreloadingStrategy } from './app.preloadStrategy';\n" + str;
+    return str.replace("preloadingStrategy:PreloadAllModules", "preloadingStrategy:PredictivePreloadingStrategy");
   }
   return str;
 }
